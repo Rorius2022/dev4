@@ -1,33 +1,33 @@
-# name: DeployDev7
+name: DeployDev7
 
-# on:
-#   push:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       # Setup key
-#       - run: set -eu
-#       - run: ls
-#       - run: mkdir "$HOME/.ssh"
-#       - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/id_rsa"
-#       - run: chmod 600 "$HOME/.ssh/id_rsa"
-#       - run: echo Hello
-#       - run: cd "$HOME"
-#       - run: ls
-#       - run: mkdir ".ssh"
-#       - run: ls
-#       - run: cd ".ssh"
-#       - run: ls
-#       - run: cat index.html
-#       - run: echo "${{ secrets.KEY }}"
-#       #- run: cat "id_rsa"
-#       # Deploy
-#       #- run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Setup key
+      - run: set -eu
+      - run: ls
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/id_rsa"
+      - run: chmod 600 "$HOME/.ssh/id_rsa"
+      - run: echo Hello
+      - run: cd "$HOME"
+      - run: ls
+      - run: mkdir ".ssh"
+      - run: ls
+      - run: cd ".ssh"
+      - run: ls
+      - run: cat index.html
+      - run: echo "${{ secrets.KEY }}"
+      #- run: cat "id_rsa"
+      # Deploy
+      #- run: rsync -e "ssh -p 22 -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
 
 # name: Deploy
 
@@ -63,135 +63,3 @@
 #         PORT: 22
 #         KEY: ${{ secrets.KEY }}
 #         script: ls
-
-
-name: DeployDev6
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      # Setup key
-      - run: set -eu
-      - run: ls
-      - run: mkdir "$HOME/.ssh"
-      - run: echo "-----BEGIN RSA PRIVATE KEY-----
-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
------END RSA PRIVATE KEY-----" > "$HOME/.ssh/id_rsa"
-      - run: chmod 600 "$HOME/.ssh/id_rsa"
-      - run: echo Hello
-      - run: cd "$HOME"
-      - run: ls
-      - run: mkdir ".ssh"
-      - run: ls
-      - run: cd ".ssh"
-      - run: ls
-      - run: cat index.html
-      - run: echo "-----BEGIN RSA PRIVATE KEY-----
-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
------END RSA PRIVATE KEY-----"
-      #- run: cat "id_rsa"
-      # Deploy
-      #- run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
