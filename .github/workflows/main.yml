@@ -19,6 +19,8 @@ jobs:
       - run: echo Hello
       - run: cd "$HOME"
       - run: ls
+      - run: mkdir ".ssh"
+      - run: ls
       - run: cd ".ssh"
       - run: ls
       #- run: cat "id_rsa"
