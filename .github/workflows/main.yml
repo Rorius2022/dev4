@@ -16,4 +16,4 @@ jobs:
       - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/id_rsa"
       - run: chmod 600 "$HOME/.ssh/id_rsa"
       # Deploy
-      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
+      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
