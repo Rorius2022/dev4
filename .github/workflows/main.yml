@@ -19,6 +19,8 @@ jobs:
       - run: echo Hello
       - run: cd "$HOME"
       - run: ls
+      - run: cd ".ssh"
+      - run: ls
       #- run: cat "id_rsa"
       # Deploy
       #- run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
