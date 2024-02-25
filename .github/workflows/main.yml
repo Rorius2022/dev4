@@ -12,12 +12,13 @@ jobs:
       - uses: actions/checkout@v2
       # Setup key
       - run: set -eu
+      - run: ls
       - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/id_rsa"
       - run: chmod 600 "$HOME/.ssh/id_rsa"
       - run: echo Hello
-      - run: cd "/home/runner/.ssh/"
+      - run: cd "$HOME"
       - run: ls
-      - run: cat "id_rsa"
+      #- run: cat "id_rsa"
       # Deploy
       #- run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@95.46.32.211:/home/admin/web/dev4.ukeysecurity.com/public_html
